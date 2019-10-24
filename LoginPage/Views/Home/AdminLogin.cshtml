@@ -1,0 +1,29 @@
+﻿@model LoginPage.Models.Admin
+@{
+    ViewData["Title"] = "Home Page";
+}
+<body style="background-color: beige;">
+    <div class="form-horizontal" style="padding-left:400px">
+            <h1>Employee Management System</h1>
+    </div>
+        <div class="form-horizontal" style="padding-left:400px">
+            <h3>Admin Login</h3>
+            <form asp-action="AdminPage">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="username" class="control-label"></label>
+                    <input asp-for="username" class="form-control" />
+                    <span asp-validation-for="username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="password" class="control-label"></label>
+                    <input type="password" asp-for="password" class="form-control" />
+                    <span asp-validation-for="password" class="text-danger"></span>
+                </div>
+                <div>
+                    <input type="submit" value="Login" aspclass="btn btn-default"  />
+                </div>
+            </form>
+        </div>
+</body>
+    

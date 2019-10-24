@@ -1,0 +1,45 @@
+﻿@model IEnumerable<LoginPage.Models.Employee>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<body style="background-color:aliceblue;">
+    <div class="form-horizontal" style="padding-left:400px">
+            <h1>Admin page</h1>
+    </div>
+    <div class="glyphicon-log-out" style="padding-top:initial">
+        <a asp-action="Index">Logout</a>
+    </div>
+        
+    <table class="table table-bordered" style="width:600px">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model._id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.name)
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item._id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { name = item.name }) |
+                        @Html.ActionLink("Delete", "Delete", new { name = item.name })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table> 
+    
+</body>
+    

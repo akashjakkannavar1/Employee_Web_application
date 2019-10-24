@@ -1,0 +1,21 @@
+﻿@model LoginPage.Models.Employee
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Employee</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <label class="control-label">Are you sure to delete? </label> <input asp-for="_id" class="form-control" readonly />
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

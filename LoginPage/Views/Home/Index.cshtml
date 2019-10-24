@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<body style="background-color: beige;">
+    <div class="form-horizontal" style="padding-left:400px">
+            <h1>Employee Management System</h1>
+    </div>
+
+    <div class="form-horizontal" style="padding-top:150px">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Employees</h3>
+                <ul>
+                    <li><a asp-action="AddEmp">Add new Employee</a></li>
+                    <li><a asp-action="DisplayAllEmp">List of all employees</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>Admins</h3>
+                <ul>
+                    <li><a asp-action="AdminLogin">Admin Login</a></li>
+                    <li><a asp-action="MakeAdmin">Register an employee as Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+    

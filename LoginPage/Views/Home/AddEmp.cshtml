@@ -1,0 +1,53 @@
+﻿@model LoginPage.Models.Employee
+@{
+    ViewData["Title"] = "AddEmp";
+}
+
+<h2>AddEmp</h2>
+
+<div class="row">
+    <div class="col-md-4">
+
+        <form asp-controller="Home" asp-action="AddEmp" method="post">
+            <div asp-val_idation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="_id" class="control-label"></label>
+                <input asp-for="_id" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-val_idation-for="name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="designation" class="control-label"></label>
+                <input asp-for="designation" class="form-control" />
+                <span asp-val_idation-for="designation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="departmentName" class="control-label"></label><br />
+                @Html.DropDownListFor(item => item.departmentName, new SelectList(new[]{"HR",
+    "Accounts", "Developers","QA"}))
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="departmentName" class="control-label"></label>
+                    <input asp-for="departmentName" class="form-control" />
+                    <span asp-val_idation-for="departmentName" class="text-danger"></span>
+                </div>*@
+
+            <div class="form-group">
+                <label asp-for="salary" class="control-label"></label>
+                <input asp-for="salary" class="form-control" />
+                <span asp-val_idation-for="salary" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Add Employee" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
